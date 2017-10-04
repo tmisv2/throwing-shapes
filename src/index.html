@@ -170,7 +170,11 @@
         };
 
         function onKeyDown() {
-            if(keyData[event.key]) {
+            throwShape(event.key);
+        }
+
+        function throwShape(key) {
+            if(keyData[key]) {
                 var maxPoint = new Point(view.size.width,view.size.height);
                 var randomPoint = Point.random();
                 var point = maxPoint * randomPoint;
@@ -191,8 +195,8 @@
                         var newShape = new Path.Rectangle(point,500);
                         break;
                 }
-                newShape.fillColor=keyData[event.key].color;
-                keyData[event.key].sound.play();
+                newShape.fillColor=keyData[key].color;
+                keyData[key].sound.play();
                 shapes.push(newShape);
             }
         }
@@ -213,6 +217,16 @@
             }
         }
 
+        $(".pad").on("click", function () {
+            throwShape($(this).text());
+
+        });
+
+        $(".pad").each(function () {
+            $(this).css("background-color",keyData[$(this).text()].color);
+            $(this).css("color",keyData[$(this).text()].color);
+        });
+
 
 
 
@@ -226,6 +240,40 @@
     <div class="jumbotron">
         <canvas id="myCanvas" ></canvas>
     </div>
+    <div class="container keyboard visible-sm visible-xs">
+        <div class="row">
+            <div class="col-xs-2"><button class="pad">q</button></div>
+            <div class="col-xs-2"><button class="pad">w</button></div>
+            <div class="col-xs-2"><button class="pad">e</button></div>
+            <div class="col-xs-2"><button class="pad">r</button></div>
+            <div class="col-xs-2"><button class="pad">t</button></div>
+            <div class="col-xs-2"><button class="pad">y</button></div>
+            <div class="col-xs-2"><button class="pad">u</button></div>
+            <div class="col-xs-2"><button class="pad">i</button></div>
+            <div class="col-xs-2"><button class="pad">o</button></div>
+            <div class="col-xs-2"><button class="pad">p</button></div>
+            <div class="col-xs-2"><button class="pad">a</button></div>
+            <div class="col-xs-2"><button class="pad">s</button></div>
+            <div class="col-xs-2"><button class="pad">d</button></div>
+            <div class="col-xs-2"><button class="pad">f</button></div>
+            <div class="col-xs-2"><button class="pad">g</button></div>
+            <div class="col-xs-2"><button class="pad">h</button></div>
+            <div class="col-xs-2"><button class="pad">j</button></div>
+            <div class="col-xs-2"><button class="pad">k</button></div>
+            <div class="col-xs-2"><button class="pad">l</button></div>
+            <div class="col-xs-2"><button class="pad">z</button></div>
+            <div class="col-xs-2"><button class="pad">x</button></div>
+            <div class="col-xs-2"><button class="pad">c</button></div>
+            <div class="col-xs-2"><button class="pad">v</button></div>
+            <div class="col-xs-2"><button class="pad">b</button></div>
+            <div class="col-xs-2"><button class="pad">n</button></div>
+            <div class="col-xs-2"><button class="pad">m</button></div>
+        </div>
+    </div>
 </div>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
 </body>
 </html>

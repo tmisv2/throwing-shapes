@@ -6,7 +6,6 @@ canvas
 
 body, html {
     height: 100%;
-    margin: 0;
     text-transform: uppercase;
 }
 
@@ -19,14 +18,47 @@ h1{
     color:steelblue;
     font-size: 20px;
     padding:0 5px;
+    margin-top: 0;
 }
 
 .jumbotron {
     padding: 30px;
     background-color: steelblue;
+    margin: 0;
 }
 
 .note
 {
     float: right;
+}
+
+.keyboard {
+    width: 100%;
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+}
+
+
+.pad
+{
+    color:white;
+    height: 40px;
+    width:70px;
+    min-width: 40px;
+    max-width:80px;
+    border-radius: 5px;
+    border: none;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 5px;
+}
+.pad:focus {
+    border:none;
+    outline: none;
+}
+
+.col-xs-1 {
+    min-width: 50px;
+    max-width:80px;
 }
