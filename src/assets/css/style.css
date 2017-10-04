@@ -7,4 +7,20 @@ canvas
 body, html {
     height: 100%;
     margin: 0;
+    text-transform: uppercase;
+}
+
+.container {
+    width:90%;
+    padding: 10px;
+    background-color: white;
+}
+h1{
+    color:steelblue;
+    font-size: 20px;
+}
+
+.jumbotron {
+    padding: 30px;
+    background-color: steelblue;
 }
