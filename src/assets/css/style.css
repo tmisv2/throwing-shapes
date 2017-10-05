@@ -19,6 +19,7 @@ h1{
     font-size: 20px;
     padding:0 5px;
     margin-top: 0;
+    height:20px;
 }
 
 .jumbotron {
@@ -32,7 +33,7 @@ h1{
     float: right;
 }
 
-.keyboard {
+#keyboard {
     width: 100%;
     margin: 0;
     padding-top: 10px;
